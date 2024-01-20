@@ -1,6 +1,7 @@
 # Autoscaling and Refresh task 
 
-![Uploading image.png…]()
+<img width="419" alt="Jdoodle architecture" src="https://github.com/PrasadNaidu1082/jd-assessment/assets/36126926/427fd00b-b09f-43ed-a1b2-bc38429a51fc">
+
 
 
 Overview This repository contains Terraform scripts to set up an AWS Autoscaling Group based on load average conditions, including scaling policies and daily machine refresh.
