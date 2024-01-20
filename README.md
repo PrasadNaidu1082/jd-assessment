@@ -1,6 +1,6 @@
 # Autoscaling and Refresh task 
 
-<img width="419" alt="Jdoodle architecture" src="https://github.com/PrasadNaidu1082/jd-assessment/assets/36126926/427fd00b-b09f-43ed-a1b2-bc38429a51fc">
+<img width="475" alt="Jdoodle architecture" src="https://github.com/PrasadNaidu1082/jd-assessment/assets/36126926/ac4d216e-7223-4cb4-af97-65a57f724312">
 
 
 
