@@ -1,5 +1,7 @@
 # Autoscaling and Refresh task 
 
+![Uploading image.png…]()
+
 
 Overview This repository contains Terraform scripts to set up an AWS Autoscaling Group based on load average conditions, including scaling policies and daily machine refresh.
 
