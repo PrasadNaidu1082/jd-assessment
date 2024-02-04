@@ -39,6 +39,6 @@ EOF
 
 resource "aws_iam_policy_attachment" "lambda_policy_attachment" {
    name       = "lamda-policy-attachment"
-  policy_arn = "arn:aws:iam::aws:policy/AWSLambdaBasicExecutionRole"
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
   roles      = [aws_iam_role.lambda_role.name]
 }
