@@ -37,5 +37,3 @@ resource "aws_autoscaling_policy" "scale_down" {
   adjustment_type       = "ChangeInCapacity"
   autoscaling_group_name = aws_autoscaling_group.jdoodle-asg.name
 }
-
- 
