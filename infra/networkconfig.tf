@@ -40,7 +40,7 @@ resource "aws_route_table" "jdoodle_vpc_public" {
 
     route {
         cidr_block = "0.0.0.0/0"
-        gateway_id = aws_internet_gateway.jdoodle_igww.id
+        gateway_id = aws_internet_gateway.jdoodle_igw.id
     }
 
     tags = {
