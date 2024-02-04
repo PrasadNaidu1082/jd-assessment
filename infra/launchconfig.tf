@@ -11,6 +11,6 @@ resource "aws_launch_configuration" "ubuntu-jdoodle" {
                           echo "aws cloudwatch put-metric-data --metric-name=Avgload  --namespace InstanceLoad  --dimensions Instance=$id --value $load" >> customalert.sh 
                           chmod +x customalert.sh
                           sleep 5
-                          (crontab -l ; echo "*/5 * * * * /home/ubuntu/custom-metrics.sh") 
+                          (crontab -l ; echo "*/5 * * * * /home/ubuntu/customalert.sh") | crontab -
                           EOF
 }
