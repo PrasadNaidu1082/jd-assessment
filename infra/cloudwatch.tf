@@ -9,7 +9,7 @@ resource "aws_cloudwatch_metric_alarm" "scale_up" {
   threshold           = 75
   alarm_actions       = [aws_autoscaling_policy.scale_up.arn]
   dimensions = {
-    AutoScalingGroupName = aws_autoscaling_group.jdoodle-asg
+    AutoScalingGroupName = aws_autoscaling_group.jdoodle-asg.name
   }
 }
 
@@ -24,6 +24,7 @@ resource "aws_cloudwatch_metric_alarm" "scale_down" {
   threshold           = 50
   alarm_actions       = [aws_autoscaling_policy.scale_down.arn]
   dimensions = {
-    AutoScalingGroupName = aws_autoscaling_group.jdoodle-asg
+    AutoScalingGroupName = aws_autoscaling_group.jdoodle-asg.name
   }
 }
+
