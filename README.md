@@ -6,7 +6,7 @@
 
 Overview This repository contains Terraform scripts to set up an AWS Autoscaling Group based on load average conditions, including scaling policies and daily machine refresh.
 
-Prerequisites Before running the Terraform scripts, ensure you have:
+Prerequisites Before running the Terraform scripts, ensure you have the following:
 
 AWS CLI configured with appropriate permissions. Terraform installed on your machine
 
@@ -28,7 +28,9 @@ networkconfig.tf: Consists of vpc, subnets, internet gateway, route table, route
 
 provider.tf: Consist of provider details.
 
-refreshevent.tf: Consist of cloudwatch event rule and target for refresh task configuration.
+refreshevent.tf: Consist of cloudwatch event rule and target for refresh task configuration. Lambda function for instance refreshes daily at 12 AM UTC connecting with the Autoscaling group. It also triggers a notification during the refresh activity.
+
+refreshlambda_function.py: This Python code defines the AWS Lambda function using the boto3 library to interact with AWS services. This Lambda function aims to initiate an instance refresh for an Auto Scaling Group (ASG).
 
 snstopic.tf: Consist of sns topic subscription, cloudwatch event target refresh task notification configuration.
 
@@ -54,6 +56,6 @@ When the 5-minute load average of the machines reaches 75%, a new instance is ad
 
 When the 5-minute load average of the machines reaches 50%, a machine is removed.
 
-Daily Machine Refresh Everyday at 12 am UTC, all machines in the group are refreshed: Old machines are removed. New machines are added.
+Daily Machine Refresh every day at 12 am UTC, all machines in the group are refreshed: Old machines are removed. New machines are added.
 
 Email Alerts Email alerts are configured for scaling and refresh events using AWS SNS. You will receive notifications when scaling up, scaling down, or during the daily machine refresh.
